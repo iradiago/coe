@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Details</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #1f2937; /* Dark gray for a techy vibe */
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif; /* Technical font */
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f3ca20; /* Metallic gold accent */
+        }
+
+        p, ul {
+            text-align: justify;
+            max-width: 900px;
+            margin: 0 auto 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #374151, #1f2937);
+            color: #e0e0e0;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #f3ca20;
+        }
+
+        .title h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #f3ca20;
+        }
+
+        /* Main Section */
+        main {
+            padding: 50px 20px;
+        }
+
+        section {
+            background-color: #2d3748;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            padding: 30px 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            border: 1px solid #f3ca20;
+        }
+
+        section h2 {
+            font-size: 2rem;
+        }
+
+        section ul li {
+            position: relative;
+            padding-left: 25px;
+        }
+
+        section ul li::before {
+            content: '\f013'; /* Font Awesome gear icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #f3ca20;
+            font-size: 1.2em;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #1f2937;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            border-top: 2px solid #f3ca20;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>Faculty Details</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="curricular.html">Curricular Offerings</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="college-dean">
+            <h2>College Dean</h2>
+            <p><strong>GILBERT D. DEBOMA, REE, M.Eng.</strong></p>
+            <p>Engr. Gilbert D. Deboma is a faculty member with 24 years of experience...</p>
+        </section>
+
+        <section id="program-chairpersons">
+            <h2>Program Chairpersons</h2>
+            <ul>
+                <li><strong>BS Civil Engineering (BSCE):</strong> FERDINAND D. TABLIGAN, RCE, M.Eng.</li>
+                <li><strong>BS Computer Engineering (BSCpE):</strong> MELOJEAN C. MARAVE, LPT, MSIT</li>
+                <li><strong>BS Electrical Engineering (BSEE):</strong> GILBERT D. DEBOMA, REE, M.Eng.</li>
+                <li><strong>BS Mechanical Engineering (BSME):</strong> MARLON JAMES A. DEDICATORIA, RMEE, Ph.D.</li>
+                <li><strong>BS Mining Engineering (BSEM):</strong> DOROTHY JOYCE SOLPICO DESIERTO</li>
+            </ul>
+        </section>
+
+        <section id="faculty-members">
+            <h2>Faculty Members</h2>
+        
+            <h3>Civil Engineering</h3>
+            <ul>
+                <li>Engr. RONEL E. ROMERO</li>
+                <li>Engr. JEMAR DALUSONG</li>
+                <li>Engr. RAYMOND ARAMAY</li>
+                <li>Engr. ABRAHAM ANTONIO</li>
+                <li>Engr. MA. THEREZA VICHO</li>
+                <li>Engr. VICTOR D. VICHO</li>
+                <li>Engr. ELENA LYN TOMBALE</li>
+                <li>Engr. RYV ANTHONY BISQUERA</li>
+                <li>Engr. JOVEN MANANGAN</li>
+                <li>Engr. ELOISA ROMULO</li>
+                <li>Engr. MARKO ANTONIO FERNANDEZ</li>
+                <li>Engr. ZENDREE ARAMAY</li>
+            </ul>
+        
+            <h3>Computer Engineering</h3>
+            <ul>
+                <li>Engr. RICKY S. BARRERA</li>
+                <li>Engr. BRYAN CARLOS B. ACAIN</li>
+                <li>Engr. OLIVER A. SABADO, JR.</li>
+                <li>Engr. DIONISIO M. MARTIN, JR.</li>
+                <li>Engr. FROILAN G. CANTILLO</li>
+                <li>Engr. ALLAN JAY L. MORILLO</li>
+                <li>Engr. DENNIZE JIANA R. BASILIO</li>
+                <li>Engr. KIRK LEE P. LEOMO</li>
+                <li>Engr. MARTEEN BERAVON REMOLACIO</li>
+            </ul>
+        
+            <h3>Electrical Engineering</h3>
+            <ul>
+                <li>Engr. MARK LESTER PARALLAG</li>
+                <li>Engr. DORIS H. MARQUEZ</li>
+                <li>Engr. SENATO ORIANZA</li>
+                <li>Engr. CHRISTIAN MARAFINA</li>
+                <li>Engr. FERNAN EDARAD</li>
+                <li>Engr. RUE LEI BALICACO</li>
+            </ul>
+        
+            <h3>Mechanical Engineering</h3>
+            <ul>
+                <li>Engr. Ma. Karla Jessica Bautista</li>
+                <li>Engr. JASPER ANTHONY CUEVAS</li>
+                <li>Engr. MICHAEL ROMUALDO</li>
+                <li>Engr. NHOELLE PADUA</li>
+            </ul>
+        
+            <h3>Allied and General Education</h3>
+            <ul>
+                <li>Engr. MELISSA M. EBUE</li>
+                <li>Engr. CLARISSE HOPE M. RICO</li>
+                <li>Dr. EMELYN E. BUGAYONG</li>
+                <li>Engr. CINDY DULLAS</li>
+                <li>Dr. EDNA PUNZALAN</li>
+                <li>Ms. JANE D. DANILA</li>
+                <li>Mr. LUCIANO MEDRANO</li>
+                <li>Ms. APRIL BESA</li>
+                <li>Ms. MADELLE SANTOS</li>
+                <li>Ms. MONICA PARANGAT</li>
+                <li>Ms. KAREN QUITORIANO</li>
+                <li>Ms. JIO ERIKA PELINIO</li>
+                <li>Ms. MAE JOYCE VELARDE</li>
+            </ul>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PRMSU College of Engineering. All rights reserved.</p>
+    </footer>
+</body>
+</html>

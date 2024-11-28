@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRMSU College of Engineering</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #004085;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        header .title h1 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Navigation Styles */
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #004085;
+            width: 100%;
+        }
+
+        .nav-links.open {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 5px 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        .dropdown.active .dropdown-menu {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100%;
+            z-index: 1000;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px 15px;
+            color: white;
+            display: block;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #003d73;
+            border-radius: 5px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            align-items: center;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            margin: 0 20px;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            position: relative;
+            margin: 10px 20px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 200px;
+            border: 2px solid #0056b3;
+            border-radius: 5px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #0056b3;
+        }
+
+        .search-bar button:hover {
+            color: #003d73;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: #004085;
+        }
+
+        section p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004085;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .search-bar input {
+                width: 100%;
+                max-width: 300px;
+                box-sizing: border-box;
+            }
+
+            .dropdown-menu {
+                position: static;
+                transform: none;
+                display: none;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .dropdown-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                transform: none;
+            }
+
+            .nav-links li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>PRMSU College of Engineering</h1>
+        </div>
+        <nav class="navbar">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button id="search-button"><i class="fa fa-search"></i></button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Instruction</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="curricular.html">Curricular Offerings</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Research</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#bsce">BSCE Researches</a></li>
+                        <li><a href="#bscp">BSCpE Researches</a></li>
+                        <li><a href="#bsee">BSEE Researches</a></li>
+                        <li><a href="#bsme">BSME Researches</a></li>
+                    </ul>
+                </li>
+                <li><a href="#extension">Extension</a></li>
+                <li><a href="history.html">History</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to PRMSU</h2>
+            <p>Explore our faculty, research, and curricular offerings.</p>
+        </section>
+
+        <section id="vision">
+            <h2>Our Vision</h2>
+            <p>PRMSU as a premier learner center and proactive university in a digital and global society.</p>
+        </section>
+
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>
+                The President Ramon Magsaysay State University shall primarily provide advanced and higher professional, 
+                technical, special instructions in various disciplines; undertake research, extension, and income generation 
+                programs for sustainable development of Zambales, the region, and the country.
+            </p>
+        </section>
+
+        <section id="quality-policy">
+            <h2>Our Quality Policy</h2>
+            <p>
+                The President Ramon Magsaysay State University is committed to continually strive for excellence in instruction, 
+                research, extension, and production to strengthen global competitiveness adhering to quality standards for the utmost 
+                satisfaction of its valued customers.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PRMSU College of Engineering. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', () => {
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        searchButton.addEventListener('click', () => {
+            alert('Searching for: ' + searchInput.value);
+        });
+    </script>
+</body>
+</html>
